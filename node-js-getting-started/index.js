@@ -29,17 +29,18 @@ function calculateRate(response, type, weight) {
 
 	if (type == "letterS") {
 		type = "Letters (Stamped)";
-		//price = 10;
 		price = calculateStamped(weight);
-	/*
-	} else if (op == "subtract") {
-		result = left - right;		
-	} else if (op == "multiply") {
-		result = left * right;
-	} else if (op == "divide") {
-		result = left / right; */
+	} else if (type == "letterM") {
+		type = "Letters (Metered)";
+		price = calculateMetered(weight);	
+	} else if (type == "largeE") {
+		type = "Large Envelopes (Flats)";
+		price = calculateEnvelope(weight);
+	} else if (type == "fcpsR") {
+		type = "First-Class Package Service—Retail";
+		price = calculateFCPackage(weight);
 	} else {
-		price - "20";
+		price - "Error: Please redo the form";
 	}
 
 	// Set up a JSON object of the values we want to pass along to the EJS result page
@@ -52,7 +53,6 @@ function calculateRate(response, type, weight) {
 }
 
 function calculateStamped(weight) {
-	let price = 0;
 	
 	const x = weight;
 	switch (true) {
@@ -67,6 +67,93 @@ function calculateStamped(weight) {
 			break;
 		default:
 			price = "1.00";
+			break;
+		}
+	return price;
+}
+
+function calculateMetered(weight) {
+	
+	const x = weight;
+	switch (true) {
+		case (x <= 1):
+			price = "0.50";
+			break;
+		case (x <= 2):
+			price = "0.65";
+			break;
+		case (x <= 3):
+			price = "0.80";
+			break;
+		default:
+			price = "0.95";
+			break;
+		}
+	return price;
+}
+
+function calculateEnvelope(weight) {
+	
+	const x = weight;
+	switch (true) {
+		case (x <= 1):
+			price = "1.00";
+			break;
+		case (x <= 2):
+			price = "1.20";
+			break;
+		case (x <= 3):
+			price = "1.40";
+			break;
+		case (x <= 4):
+			price = "1.60";
+			break;
+		case (x <= 5):
+			price = "1.80";
+			break;
+		case (x <= 6):
+			price = "2.00";
+			break;
+		case (x <= 7):
+			price = "2.20";
+			break;
+		case (x <= 8):
+			price = "2.40";
+			break;
+		case (x <= 9):
+			price = "2.60";
+			break;
+		case (x <= 10):
+			price = "2.80";
+			break;
+		case (x <= 11):
+			price = "3.00";
+			break;
+		case (x <= 12):
+			price = "3.20";
+			break;
+		default:
+			price = "3.40";
+			break;
+		}
+	return price;
+}
+
+function calculateFCPackage(weight) {
+	
+	const x = weight;
+	switch (true) {
+		case (x <= 4):
+			price = "3.80";
+			break;
+		case (x <= 8):
+			price = "4.60";
+			break;
+		case (x <= 12):
+			price = "5.30";
+			break;
+		default:
+			price = "3.40";
 			break;
 		}
 	return price;
