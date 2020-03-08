@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Postage Calculation</title>
+	<link rel="stylesheet" href="week02home.css" type="text/css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="header-content-main">
+        <h1>Please enter weight and select type</h1>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="row">
+    
+	<div class="main">
+      <h1>Postage Calculation</h1>
+	<form action="/calculate" method="get">
+		<select name="type">
+			<option value ="letterS">Letters (Stamped)</option>
+			<option>Subtract</option>
+			<option>Multiply</option>
+			<option>Divide</option>
+		</select>
+
+		<p>Weight (in oz.)</p>
+		<input type="number"  step="0.01" name="weight">
+
+		<br><br>
+		<input type="submit" value="Get Result">
+
+	</form>
+	</div>
+	
+   <footer>
+    <div class="footer">
+      <h2>CS 313 - Shawn Porter - Thomas Wood - Web Engineering II</h2>
+    </div>
+  </footer>
+  
+</body>
+</html>

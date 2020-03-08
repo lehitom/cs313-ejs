@@ -1,0 +1,114 @@
+body{
+  background-color: #32c5fa;
+  background-size: cover;
+  background-position: center;
+  font-family: "Times New Roman";
+  margin: 0;
+
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #000;
+    display: inline;
+    
+ }
+
+  header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+ }
+
+
+  header .header-content .header-content-main{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+.header-content-main img {
+ float: left;   
+}
+
+.navbar {
+  display: flex;
+  background-color: #639fff;
+  justify-content: center;
+}
+
+.navbar a {
+  color: black;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #4abdd4;
+  padding: 20px;
+}
+
+.side img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main {
+  flex: 70%;
+  background-color: #66d6ff;
+  padding: 20px;
+}
+
+.main img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer{
+  width: 100%;
+  }
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #4b7bc9;
+}
+
+/* Responsive layout - when the screen is less than 800px wide*/
+@media screen and (max-width: 800px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
